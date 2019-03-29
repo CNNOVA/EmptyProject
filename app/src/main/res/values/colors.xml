@@ -6,4 +6,7 @@
     <color name="a5a">#5a5a5a</color>
 
     <color name="title_bar_bac_color">#03bdcc</color>
+
+    <color name="withe">#ffffffff</color>
+    <color name="black">#ff000000</color>
 </resources>

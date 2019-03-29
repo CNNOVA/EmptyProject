@@ -13,6 +13,7 @@ import android.widget.LinearLayout;
 
 import com.ennova.emptyproject.R;
 import com.ennova.emptyproject.base.ActivityManager;
+import com.githang.statusbar.StatusBarCompat;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -33,34 +34,15 @@ public abstract class AbstractSimpleActivity extends SupportActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.withe));
         unBinder = ButterKnife.bind(this);
         mActivity = this;
         ActivityManager.add(this);
         onViewCreated();
-        initStatusBar();
         initToolbar();
         initEventAndData();
     }
 
-    private void initStatusBar() {
-        View statusBar = findViewById(R.id.ll_title_statusBar);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && statusBar != null) {
-            statusBar.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, getStatusBarHeight()));
-        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-                    | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-            getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            getWindow().setStatusBarColor(Color.TRANSPARENT);
-        }
-    }
-
-    protected int getStatusBarHeight() {
-        Resources resources = getResources();
-        int resourceId = resources.getIdentifier("status_bar_height", "dimen", "android");
-        return resources.getDimensionPixelSize(resourceId);
-    }
 
     @Override
     public void startActivity(Intent intent) {

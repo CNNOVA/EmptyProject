@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.ennova.emptyproject.login.LoginActivity;
+import com.githang.statusbar.StatusBarCompat;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.black));
         ButterKnife.bind(this);
     }
 
