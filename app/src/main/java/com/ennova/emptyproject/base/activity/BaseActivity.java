@@ -40,7 +40,7 @@ import static android.view.View.OVER_SCROLL_NEVER;
 public abstract class BaseActivity<T extends AbstractPresenter> extends AbstractSimpleActivity implements
         HasSupportFragmentInjector,
         AbstractView {
-
+        public final String TAG = this.getClass().getSimpleName();
 
     @Inject
     DispatchingAndroidInjector<Fragment> mFragmentDispatchingAndroidInjector;

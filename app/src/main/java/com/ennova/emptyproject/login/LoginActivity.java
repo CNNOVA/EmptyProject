@@ -3,6 +3,7 @@ package com.ennova.emptyproject.login;
 
 import com.ennova.emptyproject.R;
 import com.ennova.emptyproject.base.activity.BaseActivity;
+import com.ennova.emptyproject.data.local.SpManager;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View{
 
@@ -20,6 +21,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     protected void initEventAndData() {
         mPresenter.checkAppVersion();
+        mPresenter.putUserInfo();
     }
 
     @Override

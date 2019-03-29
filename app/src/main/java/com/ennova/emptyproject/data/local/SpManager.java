@@ -3,7 +3,9 @@ package com.ennova.emptyproject.data.local;
 import android.content.SharedPreferences;
 
 import com.ennova.emptyproject.MyApplication;
+
 import static android.content.Context.MODE_PRIVATE;
+
 /**
  * @作者 zhouchao
  * @日期 2019/3/28
@@ -35,5 +37,17 @@ public class SpManager {
 
     public void putUserUserInfo(String userInfo) {
         spUser.edit().putString("userInfo", userInfo).apply();
+    }
+
+    public int getUserId() {
+        return spUser.getInt("userId", -1);
+    }
+
+    public void putUserId(int id) {
+        spUser.edit().putInt("userId", id).apply();
+    }
+
+    public void clearAllUserData() {
+        spUser.edit().clear().apply();
     }
 }

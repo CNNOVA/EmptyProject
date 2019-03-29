@@ -16,5 +16,8 @@ public interface LoginContract {
 
     interface Presenter extends AbstractPresenter<View> {
         void checkAppVersion();
+
+        void putUserInfo();
+
     }
 }

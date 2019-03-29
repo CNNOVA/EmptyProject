@@ -12,6 +12,8 @@ import io.reactivex.disposables.Disposable;
 
 public class BasePresenter<T extends AbstractView> implements AbstractPresenter<T> {
 
+    public final String TAG = this.getClass().getSimpleName();
+
     protected T mView;
     private CompositeDisposable compositeDisposable;
     private DataManager mDataManager;
