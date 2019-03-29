@@ -49,6 +49,7 @@ public abstract class BaseObserver<T> extends ResourceObserver<T> {
 
     @Override
     public void onError(Throwable e) {
+        e.printStackTrace();
         if (mView == null) {
             return;
         }
