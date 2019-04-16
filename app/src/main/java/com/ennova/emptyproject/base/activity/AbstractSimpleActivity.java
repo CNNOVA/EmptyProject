@@ -34,13 +34,17 @@ public abstract class AbstractSimpleActivity extends SupportActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(getLayoutId());
-        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.withe));
+        initStatusBar();
         unBinder = ButterKnife.bind(this);
         mActivity = this;
         ActivityManager.add(this);
         onViewCreated();
         initToolbar();
         initEventAndData();
+    }
+
+    public void initStatusBar() {
+        StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.withe));
     }
 
 

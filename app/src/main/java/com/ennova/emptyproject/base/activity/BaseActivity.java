@@ -182,4 +182,9 @@ public abstract class BaseActivity<T extends AbstractPresenter> extends Abstract
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
     }
+
+    @Override
+    public void reload() {
+
+    }
 }

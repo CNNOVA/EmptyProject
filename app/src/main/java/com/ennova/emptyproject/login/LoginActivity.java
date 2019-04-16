@@ -1,12 +1,26 @@
 package com.ennova.emptyproject.login;
 
 
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import com.ennova.emptyproject.R;
 import com.ennova.emptyproject.base.activity.BaseActivity;
-import com.ennova.emptyproject.data.local.SpManager;
+import com.githang.statusbar.StatusBarCompat;
 
-public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View{
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
 
+public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {
+
+    @BindView(R.id.iv_left)
+    ImageView ivLeft;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
+    @BindView(R.id.tv_right)
+    TextView tvRight;
 
     @Override
     protected int getLayoutId() {
@@ -15,7 +29,16 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
 
     @Override
     protected void initToolbar() {
+        initTitle();
+//        StatusBarCompat.setLightStatusBar(getWindow(), true);
+//        StatusBarCompat.setTranslucent(getWindow(), true);
+    }
 
+    private void initTitle() {
+        ivLeft.setVisibility(View.VISIBLE);
+        tvTitle.setText("登录");
+        tvRight.setText("注册");
+        tvRight.setVisibility(View.VISIBLE);
     }
 
     @Override
@@ -24,8 +47,15 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
         mPresenter.putUserInfo();
     }
 
-    @Override
-    public void reload() {
-
+    @OnClick({R.id.iv_left, R.id.tv_right})
+    public void onViewClicked(View view) {
+        switch (view.getId()) {
+            case R.id.iv_left:
+                finish();
+                break;
+            case R.id.tv_right:
+                showToast("To Register");
+                break;
+        }
     }
 }
