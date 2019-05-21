@@ -1,4 +1,4 @@
-package com.ennova.emptyproject.login;
+package com.ennova.emptyproject.module.login;
 
 
 import android.view.View;
@@ -10,7 +10,6 @@ import com.ennova.emptyproject.base.activity.BaseActivity;
 import com.githang.statusbar.StatusBarCompat;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginContract.View {

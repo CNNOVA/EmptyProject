@@ -1,4 +1,4 @@
-package com.ennova.emptyproject.login;
+package com.ennova.emptyproject.module.login;
 
 import com.ennova.emptyproject.base.presenter.AbstractPresenter;
 import com.ennova.emptyproject.base.view.AbstractView;

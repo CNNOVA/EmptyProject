@@ -1,10 +1,9 @@
-package com.ennova.emptyproject.login;
+package com.ennova.emptyproject.module.login;
 
 import android.util.Log;
 
 import com.ennova.emptyproject.base.observer.BaseObserver;
 import com.ennova.emptyproject.base.presenter.BasePresenter;
-import com.ennova.emptyproject.data.bean.AppVersion;
 import com.ennova.emptyproject.data.bean.ScenicListBean;
 import com.ennova.emptyproject.data.local.SpManager;
 import com.ennova.emptyproject.data.network.DataManager;

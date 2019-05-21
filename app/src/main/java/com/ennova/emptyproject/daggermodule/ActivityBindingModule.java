@@ -1,7 +1,7 @@
 package com.ennova.emptyproject.daggermodule;
 
-import com.ennova.emptyproject.MainActivity;
-import com.ennova.emptyproject.login.LoginActivity;
+import com.ennova.emptyproject.module.MainActivity;
+import com.ennova.emptyproject.module.login.LoginActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

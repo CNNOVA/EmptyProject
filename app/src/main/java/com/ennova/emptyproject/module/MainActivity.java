@@ -1,11 +1,12 @@
-package com.ennova.emptyproject;
+package com.ennova.emptyproject.module;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.ennova.emptyproject.login.LoginActivity;
+import com.ennova.emptyproject.R;
+import com.ennova.emptyproject.module.login.LoginActivity;
 import com.githang.statusbar.StatusBarCompat;
 
 import butterknife.BindView;
