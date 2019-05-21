@@ -30,8 +30,6 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
     @Override
     protected void initToolbar() {
         initTitle();
-//        StatusBarCompat.setLightStatusBar(getWindow(), true);
-//        StatusBarCompat.setTranslucent(getWindow(), true);
     }
 
     private void initTitle() {
@@ -57,5 +55,10 @@ public class LoginActivity extends BaseActivity<LoginPresenter> implements Login
                 showToast("To Register");
                 break;
         }
+    }
+
+    @Override
+    public void initStatusBar() {
+        StatusBarCompat.setTranslucent(getWindow(), true);
     }
 }
